@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String input = edtNumber.getText().toString().trim();
+                // Trong onClick: ngay sau khi đọc giá trị từ EditText → để xem input hoặc.
+                Log.d("DEBUG", "Input = " + input);
                 if (input.isEmpty()) {
                     txtResult.setText("Vui lòng nhập số!");
                     txtPrimes.setText("");
@@ -34,28 +37,37 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 int n = Integer.parseInt(input);
+                // Sau khi parse sang int → kiểm tra n hoặc.
+                Log.d("DEBUG", "Giá trị n = " + n);
                 int sum = 0;
                 StringBuilder primesList = new StringBuilder();
 
                 for (int i = 2; i < n; i++) {
                     if (isPrime(i)) {
+                    // Trong vòng lặp → để theo dõi từng số i và giá trị sum.
                         sum += i;
                         primesList.append(i).append(" ");
+                        Log.d("DEBUG", "Thêm số nguyên tố " + i + ", tổng hiện tại = " + sum);
                     }
                 }
 
                 txtResult.setText("Tổng số nguyên tố nhỏ hơn " + n + " là: " + sum);
                 txtPrimes.setText("Các số nguyên tố: " + primesList.toString());
+                Log.d("DEBUG", "Kết quả cuối cùng: sum = " + sum + ", primes = " + primesList.toString());
             }
         });
     }
-
     // Hàm kiểm tra số nguyên tố
     private boolean isPrime(int num) {
         if (num < 2) return false;
         for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i == 0) return false;
+        // Trong hàm isPrime → để theo dõi logic kiểm tra.
+            if (num % i == 0) {
+                Log.d("DEBUG", num + " chia hết cho " + i + " → không phải số nguyên tố");
+                return false;
+            }
         }
+        Log.d("DEBUG", num + " là số nguyên tố");
         return true;
     }
 }
