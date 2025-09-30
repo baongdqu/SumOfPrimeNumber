@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SumOfPrimeNumber</string>
+    <string name="nh_p_m_t_s">Nhập một số</string>
+    <string name="t_nh_t_ng_s_nguy_n_t_tr_c">Tính tổng số nguyên tố trước đó</string>
+    <string name="k_t_qu_s_hi_n_th_y">Kết quả sẽ hiển thị ở đây</string>
+</resources>

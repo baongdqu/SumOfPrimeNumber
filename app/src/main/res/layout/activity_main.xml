@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Ô nhập số -->
+    <EditText
+        android:id="@+id/edtNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập một số"
+        android:inputType="number" />
+
+    <!-- Nút tính toán -->
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tính tổng số nguyên tố trước đó"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Hiển thị tổng -->
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kết quả sẽ hiển thị ở đây"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"/>
+
+    <!-- Hiển thị danh sách số nguyên tố -->
+    <TextView
+        android:id="@+id/txtPrimes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Danh sách số nguyên tố sẽ hiển thị ở đây"
+        android:textSize="16sp" />
+</LinearLayout>
